@@ -1,0 +1,407 @@
+
+@media only screen and (max-width : 1200px)
+		
+
+	.about__right
+		padding-bottom: 98px
+	
+	.header__logo
+		margin-left: 0
+
+	.hero
+		padding-top: 180px
+
+		&__text
+			margin-bottom: 90px
+
+			span
+				display: none
+
+	.nav
+		li
+			margin-right: 15px
+
+	.services
+		.container
+			padding: 80px 0
+
+		&__item
+			width: 215px
+			height: 215px
+			margin-right: 15px
+			margin-left: 15px
+			margin-bottom: 30px
+
+			&:nth-child(-n+3)
+				margin-bottom: 30px
+
+			&:last-child
+				margin-bottom: 0
+			
+	.work
+		&__item
+			width: 232px
+			height: 232px
+
+			&--center
+				padding-left: 10px
+
+			img
+				width: 100%
+				height: 100%
+	.reviews
+		&__right_block b::before
+			left: 30%
+
+		&__right
+			padding: 55px 50px 25px 50px
+
+		&__bg
+			left: 44.5%
+
+		&__left
+			margin-right: 0
+
+		& .swiper-button-next
+			left: 75px
+
+		&__left
+			padding: 49px 0
+
+	.contacts
+		height: 500px
+
+		&__block
+			padding: 35px 35px 70px 35px
+			max-width: 407px
+
+		p
+			width: 22%
+
+	#map
+		height: 500px
+
+
+@media only screen and (max-width : 991px)
+	.hero__slider--img img
+		width: 100%
+
+	.header
+		&__container
+			padding-right: 70px
+
+		&__logo
+			img
+				width: 145px
+
+	.nav
+		position: fixed
+		display: block
+		width: 320px
+		height: 100%
+		flex-direction: column
+		right: -100%
+		top: 85px
+		z-index: -1
+		background: $bg
+		transition: all .3s
+
+		ul
+			display: flex
+			flex-direction: column
+			justify-content: center
+			margin-top: 40px
+			margin-left: 40px
+
+		li
+			margin: 0
+			margin-bottom: 10px
+
+		a
+			color: #fff
+		
+		&--active
+			right: 0
+
+	.hamburger
+		display: block
+
+	.footer
+		.nav
+			display: none
+
+	.hero
+		padding-top: 70px
+
+		&__logo
+			left: 19%
+
+		&__slider
+
+			&--img
+				left: 0
+
+			&_content
+				margin-bottom: 20px
+
+		&__text
+			margin-right: 0
+			margin-bottom: 30px
+
+		&__title
+			margin-right: 0
+			margin-bottom: 30px
+
+		.col-lg-6--end
+			padding-left: 15px
+
+	.about
+
+		&__bg
+			max-height: 475px
+
+		&__left
+			margin-right: 0
+			padding-bottom: 50px
+
+			h2
+				margin-bottom: 35px
+
+		&__right
+			padding-bottom: 55px
+
+			h2
+				margin-bottom: 35px
+
+			ul
+				display: flex
+				justify-content: space-around
+				flex-wrap: wrap
+
+			li
+				margin-bottom: 30px
+				width: 45%
+	
+	.work
+		.container
+			&::before, &::after
+				display: none
+
+		&__item
+			width: 172px
+			height: 172px
+
+	.services
+		h2
+			top: 0
+
+	.reviews
+		&__bg
+			left: 0
+
+		.form__line--textarea
+			margin-bottom: 25px
+
+		&__left
+			h2
+				margin-bottom: 30px
+
+		&__right_block
+			margin-bottom: 50px
+
+	.queation
+		padding: 80px 0
+
+		p
+			margin-right: 0
+
+		.form
+			flex-direction: column-reverse
+			flex-wrap: wrap
+
+			&__line
+				width: 100%
+
+				&--textarea
+					width: 100%
+					margin-bottom: 20px
+
+
+@media only screen and (max-width : 767px)
+	
+	.work
+		h2
+			margin-bottom: 30px
+
+		&__list
+			
+			&--decstop
+				display: none
+
+			&--responsive
+				display: flex
+
+		&__item
+			width: 50%
+			max-height: 255px
+			height: auto
+
+			&--img
+				height: 100%
+
+			&--center
+				padding-left: 10px
+
+				p
+					font-size: 12px
+
+				&-right
+					padding-left: 0
+					padding-right: 10px
+
+					p
+						padding-bottom: 0
+						padding-left: 0
+						padding-right: 20px
+
+						&::before
+							transform: translate(0, -50%) rotate(-90deg)
+							bottom: auto
+							top: 50%
+							right: 0
+							left: auto
+
+
+	h2
+		font-size: 36px
+	
+	.hero
+		&__icon
+			margin-bottom: 0
+
+		&__logo
+			position: relative
+			left: auto
+			margin-bottom: 30px
+			width: 100%
+
+	.services .container
+		padding: 50px 0
+	
+	.about__bg
+		max-height: 563px
+
+	.queation
+		&::before
+			right: 0
+
+		h2
+			margin-bottom: 30px
+
+			br
+				display: none
+
+		p
+			margin-bottom: 30px
+
+		.form
+			margin-left: 0
+
+	.footer
+		&__container
+			flex-direction: column-reverse
+			align-items: center
+			text-align: center
+		
+		&__btn
+			margin-bottom: 30px
+
+		&__icon
+			margin: 0 auto 20px
+			width: 100%
+
+	#map, .contacts
+		height: 400px
+
+
+@media only screen and (max-width : 576px)
+	.header
+		padding: 5px 0
+
+		&__tel
+			display: none
+
+	.main
+		padding-top: 85px
+
+	.services
+		.container
+			padding: 0
+
+		h2
+			position: relative
+
+	.work
+		padding-top: 40px
+
+		h2
+			position: relative
+			margin-bottom: 20px
+
+		.container
+			padding-top: 0
+	
+	.queation
+		padding: 40px 0
+
+	#map
+		position: relative
+		height: 350px
+
+	.contacts
+		height: auto
+
+		&__block
+			max-width: 100%
+			margin: 15px 0
+	
+	.reviews__right
+		padding: 20px
+
+
+
+@media only screen and (max-width : 480px)
+	h2
+		font-size: 30px
+
+	.header
+		&__logo
+			img
+				width: 130px
+	
+	.hero__slider_content
+		padding: 25px
+
+	.about__left
+		padding: 15px
+
+	.reviews__right_block b::before
+		left: 0
+
+	.services
+
+		img
+			margin-bottom: 15px
+
+		&__item
+			width: 150px
+			height: 150px
+
+
+
+
+
+
+
+
+

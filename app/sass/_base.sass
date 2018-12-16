@@ -1,0 +1,122 @@
+@import "fonts"
+
+
+//----------------------fonts---------------------
+$fonts: 'Montserrat', sans-serif
+//---------------------end-fonts---------------------
+
+//----------------------color---------------------
+$accent: #fdcf00
+$text: #262a35
+$bg: #262a35
+$white: #fff
+
+//---------------------end-color---------------------
+
+body
+	overflow-x: hidden
+	position: relative
+	min-width: 400px
+	font-family: $fonts
+	font-size: 14px
+	color: $text
+	line-height: 1.2
+	font-weight: 400
+	letter-spacing: 0.35px
+
+::selection
+	background-color: $accent
+	color: #fff
+
+a, div, ul, li, input, textarea
+	&:hover,
+	&:focus
+		outline: none
+
+section
+	overflow: hidden
+	
+h1, h2, h3, h4, h5, h6
+	font-weight: 700
+	line-height: 1.2
+	margin: 0
+	padding: 0
+
+
+h2
+	font-size: 42px
+	font-weight: 400
+	letter-spacing: 0.12px
+	text-align: center
+
+ul
+	margin: 0
+	padding: 0
+	list-style-type: none
+
+i
+	font-style: normal
+	font-size: 16px
+	color: #fff
+
+input, textarea
+	border: 1px solid #262a35
+	border-radius: 0
+	outline: none
+	box-shadow: none
+	-webkit-appearance: none
+	line-height: 1.2
+	padding: 0 10px
+
+	&:focus:required:invalid
+		border: 1px solid #262a35
+		outline: none
+		box-shadow: none
+		-webkit-appearance: none
+
+	&:required:valid
+		border: 1px solid #262a35
+		outline: none
+		box-shadow: none
+		-webkit-appearance: none
+
+	&::placeholder
+		font-size: 14px
+		color: #c4c4c4
+		line-height: 1.2
+		
+
+input
+	height: 50px
+	line-height: 50px
+
+	&::placeholder
+		line-height: 50px
+
+textarea
+	padding: 10px
+	resize: none
+
+label
+	color: #c4c4c4
+	margin-bottom: 20px
+
+b, strong
+	font-weight: 700
+
+p
+	margin: 0
+	padding: 0
+
+a,
+a:focus,
+a:hover
+	outline: none
+	text-decoration: none
+
+@import "_base/preloader"
+@import "_base/animation"
+@import "_base/btn"
+@import "_base/form"
+@import "_base/modal"
+@import "_base/hamburger"
