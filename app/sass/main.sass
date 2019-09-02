@@ -3,68 +3,65 @@
 
 
 
-.main
-	padding-top: 105px
-	transition: all .3s
-
-	&--menu
-		padding-top: 85px
-
 .header
 	position: fixed
+	top: 0
 	right: 0
 	left: 0
 	background-color: $bg
-	padding: 15px 0
+	padding: 25px 0
 	transition: all .3s
 	z-index: 1001
 
-	&--active
-		background-color: $bg
-		padding: 5px 0
-
+	&--active,
 	&--menu
 		background-color: $bg
-		padding: 5px 0
+		padding: 15px 0
 
 	&__container
 		position: relative
 		display: flex
-		flex-direction: row
 		justify-content: space-between
 		align-items: center
 
+	&__logo
+		max-width: 180px
+		img
+			width: 100%
+
 	&__tel
-		color: $accent
+		color: #fff
 		position: relative
 		z-index: 1
 		font-weight: 700
 		transition: all .3s
 		letter-spacing: .35px
-		
+	
 		&::before
 			content: ''
-			width: 0
-			transform: scale(0)
-			transition: all .3s
 			position: absolute
-			bottom: -6px
-			width: 100%
-			height: 6px
-			background-color: $accent
+			top: 100%
+			width: 0
+			height: 1px
+			background-color: #fff
 			z-index: -1
+			transform: translate(0, -50%) scale(0)
+			transition: all .6s
 
 		&:hover, &:focus
-			color: $accent
+			color: $white
 			text-decoration: none
-			&::before
-				transform: scale(.5)
 
-	&__logo
-		margin-left: 30px
+			&::before
+				transform: scale(1)
+				width: 100%
 
 
 .nav
+
+	.btn
+		display: none
+		
 	ul
 		display: flex
 		flex-direction: row
@@ -79,31 +76,34 @@
 		position: relative
 		z-index: 1
 		color: $white
-		transition: all .3s
+		transition: all .6s
 		letter-spacing: .35px
 
 		&::before
 			content: ''
-			width: 0
-			transform: scale(0)
-			transition: all .3s
 			position: absolute
-			bottom: -6px
-			width: 100%
-			height: 6px
-			background-color: $accent
+			top: 50%
+			width: 0
+			height: 1px
+			background-color: #fff
 			z-index: -1
+			transform: translate(0, -50%) scale(0)
+			transition: all .6s
 
 		&:hover, &:focus
-			color: $accent
+			color: $white
 			text-decoration: none
+
 			&::before
-				transform: scale(.5)
+				transform: scale(1)
+				width: 100%
 
 
 .hero
 	position: relative
-	padding-top: 220px
+	padding-top: 270px
+	background-color: #252525
+	color: #fff
 
 	&__icon
 		width: 70px
@@ -111,23 +111,24 @@
 		display: flex
 		justify-content: space-between
 		flex-wrap: wrap
-		margin-bottom: 150px
+		margin-bottom: 290px
 
 		img
-			transition: all .3s
+			animation: hover-back .6s linear 1 forwards
 
 		a
-			&:hover
+			&:hover,
+			&:focus
 				img
-					animation: hover .3s linear 1 forwards
+					animation: hover .6s linear 1 forwards
 
 	&__text
 		position: relative
-		margin-bottom: 120px
 		font-size: 22px
 		line-height: 1.2
 		text-align: right
 		margin-right: 70px
+		margin-bottom: 210px
 
 		span
 			position: absolute
@@ -137,18 +138,12 @@
 			height: 1px
 			background: #262a35
 
-	&__title
-		text-align: right
-		font-size: 24px
-		letter-spacing: 0.6px
-		font-weight: 700
-		margin-bottom: 160px
-		margin-right: 70px
-
 	&__logo
 		position: absolute
-		left: 63%
-		top: 0
+		left: 100%
+		top: 140px
+		transform: translate(-50%, 0)
+		z-index: 2
 	
 	.col-lg-6--end
 		display: flex
@@ -156,22 +151,30 @@
 		justify-content: flex-end
 		padding-left: 0
 
+	&__slide
+		opacity: 0 !important
+		transition: all .6s
+
+	.swiper-slide-active
+		opacity: 1 !important
+	
 	&__slider
 		width: 100%
+		z-index: 2
 
 		&--img
 			position: absolute
 			left: 50%
 			top: 0
 			bottom: 0
-			z-index: -1
+			z-index: 1
 
 			img
 				width: 960px
 				height: 1000px
 
 		&_content
-			background: $bg
+			background-color: rgba(#fff, .6)
 			padding: 50px 40px 50px 38px
 			color: #fff
 			z-index: 1
@@ -179,9 +182,13 @@
 
 		&_title
 			font-size: 24px
-			font-weight: 700
-			letter-spacing: 0.6px
 			margin-bottom: 8px
+			color: #000
+			margin-bottom: 25px
+
+		&_text
+			font-size: 16px
+			color: #000
 	
 	.swiper-button-prev,
 	.swiper-button-next
@@ -203,6 +210,8 @@
 
 .about
 	position: relative
+	background-color: #252525
+	color: #fff
 
 	&__bg
 		position: absolute
@@ -212,35 +221,71 @@
 		bottom: 0
 
 	&__left
-		background: $bg
+		background-color: rgba(#fff, .6)
 		color: $white
 		padding-top: 30px
 		padding-bottom: 130px
-		padding: 55px 35px 125px 35px
+		padding: 40px 35px
 		margin-right: -15px
+		color: #000
+		font-size: 16px
+		line-height: 1.4
 
 		h2
-			color: #fff
-			margin-bottom: 65px
+			position: relative
+			color: #000
+			margin-bottom: 35px
+			text-align: left
+
+			&::before
+				content: ''
+				position: absolute
+				right: 0
+				top: 50%
+				transform: translate(0, -50%) rotate(225deg)
+				width: 22px
+				height: 22px
+				border-top: 4px solid #252525
+				border-left: 4px solid #252525
 
 		p
-			margin-bottom: 15px
-
-			&:last-child
-				margin-bottom: 0
+			text-indent: 20px
+			letter-spacing: .8px
 
 	&__right
-		padding-top: 55px
-		padding-bottom: 150px
-		text-align: center
+		padding-top: 40px
+		padding-left: 80px
 
 		h2
+			position: relative
 			margin-bottom: 70px
+			text-align: right
+
+			&::before
+				content: ''
+				position: absolute
+				left: 0
+				top: 50%
+				transform: translate(0, -50%) rotate(225deg)
+				width: 22px
+				height: 22px
+				border-top: 4px solid #fff
+				border-left: 4px solid #fff
 
 		li
-			margin-bottom: 55px
+			position: relative
 			display: flex
 			flex-direction: column
+			padding-left: 80px
+			margin-bottom: 70px
+			font-size: 16px
+
+			&::after
+				content: url(../img/about--check.png)
+				position: absolute
+				left: 0
+				top: 50%
+				transform: translate(0, -50%)
 
 			&:last-child
 				margin-bottom: 0
@@ -250,95 +295,98 @@
 
 
 .services
-	overflow: inherit
-
-	.container
-		position: relative
-		padding-top: 140px
-		padding-bottom: 100px
+	background-image: url(../img/services--bg.jpg)
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center
 
 	h2
-		position: absolute
-		right: 0
-		top: -26px
+		position: relative
+		background-color: #252525
+		margin-bottom: 90px
+		color: #fff
+		padding: 35px
+		text-align: left
 
 		&::before
 			content: ''
 			position: absolute
-			left: -316px
+			right: 35px
 			top: 50%
-			width: 258px
-			height: 1px
-			background: $bg
+			transform: translate(0, -50%) rotate(225deg)
+			width: 22px
+			height: 22px
+			border-top: 4px solid #fff
+			border-left: 4px solid #fff
 
-	&__list
-		display: flex
-		justify-content: space-around
-		flex-wrap: wrap
+	.col-lg-6
+		padding-right: 0
 
+	&__container
+		position: relative
+		padding-bottom: 60px
+		
 	&__item
-		display: flex
-		flex-direction: column
-		justify-content: center
-		width: 235px
-		height: 235px
-		margin-right: 5%
-		margin-left: 5%
-		min-width: 235px
-		align-items: center
-		text-align: center
-		border: 1px solid #fff
-		transition: all .3s
+		position: relative
+		font-size: 16px
+		margin-bottom: 20px
+		padding-left: 85px
 
-		&:hover
-			border: 1px solid $bg
+		&::before
+			content: url(../img/services--check.png)
+			position: absolute
+			left: 0
+			top: 50%
+			transform: translate(0, -50%)
 
-		&:nth-child(-n+3)
-			margin-bottom: 75px
-
-		b
-			font-size: 18px
-			text-align: center
-			line-height: 1.1
-
-	img
-		margin-bottom: 35px
+		&:last-child
+			margin-bottom: 0
 
 
 .work
-	.container
+	padding-top: 50px
+	background-color: #ececec
+
+	&__title
+		text-align: right
+
+	h2
 		position: relative
-		padding-top: 95px
+		display: inline-block
+		margin-bottom: 55px
+
+		&::before
+			content: ''
+			position: absolute
+			left: -50px
+			top: 45%
+			transform: translate(0, -50%) rotate(225deg)
+			width: 20px
+			height: 20px
+			border-top: 4px solid #252525
+			border-left: 4px solid #252525
+
+	&__container
+		position: relative
 
 		&::before,
 		&::after
-			content: ''
 			position: absolute
 			height: 292px
 			width: 150%
-			background: $bg
+			background: #252525
 
 		&::before
+			content: url(../img/work7.jpg)
 			left: 98.5%
 			top: 95px
 
 		&::after
+			content: url(../img/work8.jpg)
+			text-align: right
 			right: 98.5%
 			bottom: 292px
 
-	h2
-		position: absolute
-		right: 0
-		top: 0
-
-		&::before
-			content: ''
-			position: absolute
-			left: -316px
-			top: 50%
-			width: 258px
-			height: 1px
-			background: $bg
 
 	span
 		font-size: 12px
@@ -447,83 +495,13 @@
 					left: 0
 
 
-.reviews
-	position: relative
-
-	&__bg
-		position: absolute
-		left: 44.9%
-		right: auto
-		top: 0
-		bottom: 0
-
-	&__left
-		padding: 54px 0
-		margin-right: 70px
-			
-		h2
-			margin-bottom: 45px
-			text-align: left
-
-		p
-			margin-bottom: 30px
-
-
-	&__right
-		position: relative
-		background: $bg
-		padding: 55px 75px 25px 100px
-		color: #fff
-		overflow: hidden
-
-		&_block
-			margin-bottom: 85px
-
-			&:last-child
-				margin-bottom: 50px
-
-			p
-				padding-right: 55px
-
-			b, span
-				display: block
-				text-align: right
-
-			b
-				position: relative
-
-				&::before
-					content: ''
-					position: absolute
-					top: 8px
-					left: 45%
-					width: 120px
-					height: 1px
-					background: $white
-
-	.swiper-button-prev,
-	.swiper-button-next
-		background-image: url(../img/arrow.png)
-		width: 19px
-		height: 29px
-		background-size: 19px 29px
-		top: auto
-		bottom: 35px
-		right: auto
-
-	.swiper-button-next
-		transform: rotate(-180deg)
-
-	.swiper-button-prev
-		left: 35px
-
-
 .queation
 	position: relative
 	padding-top: 160px
-	padding-bottom: 185px
+	padding-bottom: 115px
 	color: $white
 	line-height: 1.4
+	background-color: #ececec
 
 	&::before
 		content: ''
@@ -532,13 +510,14 @@
 		right: 55%
 		top: 0
 		bottom: 0
-		background: $bg
+		background: #252525
 
 	h2
 		text-transform: uppercase
 		text-align: left
 		line-height: 1.1
-		margin-bottom: 65px
+		margin-bottom: 50px
+		font-size: 42px
 
 	p
 		position: relative
@@ -551,30 +530,40 @@
 			bottom: -51px
 			width: 51px
 			height: 51px
-			background-color: $accent
+			background-color: #fff
 
 	.form
 		margin-left: 35px
-		display: flex
-		justify-content: space-between
 
 		&__line
 			display: flex
-			width: 39%
+			justify-content: space-between
+			margin-bottom: 20px
 
 			&--textarea
-				width: 58%
+				width: 100%
+
+				textarea
+					width: 100%
+					height: 125px
 
 			div
 				position: relative
-				width: 100%
-				margin-bottom: 23px
+				width: 48%
 
 		input
 			width: 100%
 
+		&__btn
+			display: flex
+			justify-content: flex-end
+
+
 		.btn
 			max-width: 100%
+			background-color: #252525
+			color: #fff
+			padding: 0 85px !important
 
 			&--active
 				padding: 0
@@ -586,9 +575,9 @@
 
 	&__block
 		position: relative
-		padding: 70px 70px 90px 70px
-		background: $accent
-		max-width: 500px
+		padding: 60px 35px 90px 50px
+		background: rgba(#bdbdbd, .75)
+		max-width: 480px
 		overflow: hidden
 		z-index: 1
 
@@ -599,9 +588,13 @@
 		display: flex
 		margin-bottom: 20px
 
+		span,
+		a
+			font-size: 18px
+			white-space: nowrap
+
 	&__tel
 		a
-			font-weight: 700
 			color: $text
 
 	&__place
@@ -618,7 +611,7 @@
 
 	&__bg
 		position: absolute
-		top: 20px
+		bottom: 0
 		right: 0
 		z-index: -1
 
@@ -641,6 +634,9 @@
 		display: flex
 		justify-content: space-between
 		position: relative
+
+	&__logo
+		max-width: 180px
 
 	&__up
 		position: absolute
@@ -702,6 +698,7 @@
 		&__tel
 			margin-bottom: 25px
 			display: block
+			font-size: 18px
 
 	.nav
 		max-width: 210px
@@ -714,6 +711,13 @@
 			width: 50%
 			margin-right: 0
 			margin-bottom: 25px
+	
+	&__info
+		font-size: 16px
+
+	&__col
+		font-size: 12px
+
 
 @import "page"
 @import "media" // Always at the end
