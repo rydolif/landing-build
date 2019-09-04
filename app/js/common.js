@@ -17,6 +17,14 @@ $(function() {
       nextEl: '.hero-button-next',
       prevEl: '.hero-button-prev',
     },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+  });
+//------------------------------hero slider-----------------------------
+ var swiper = new Swiper('.hero__slider--img', {
+    effect: 'fade',
   });
 
 
