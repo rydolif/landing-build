@@ -121,7 +121,7 @@
 		&__logo
 			position: relative
 			left: 50%
-			top: 0
+			top: 100px
 
 		&__icon
 			margin-bottom: 40px
@@ -137,6 +137,7 @@
 		&__text
 			margin-right: 0
 			margin-bottom: 30px
+			margin-top: 140px
 			z-index: 2
 
 		&__title
@@ -376,6 +377,13 @@
 
 
 @media only screen and (max-width : 576px)
+	h2
+		&::before
+			display: none !important
+
+	.about__right
+		padding-top: 75px
+
 	.header
 		padding: 5px 0
 

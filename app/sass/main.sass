@@ -61,7 +61,7 @@
 
 	.btn
 		display: none
-		
+
 	ul
 		display: flex
 		flex-direction: row
@@ -105,22 +105,29 @@
 	background-color: #252525
 	color: #fff
 
-	&__icon
-		width: 70px
-		height: 70px
-		display: flex
-		justify-content: space-between
-		flex-wrap: wrap
-		margin-bottom: 290px
+	&__logo
+		position: absolute
+		left: 100%
+		top: 100px
+		transform: translate(-50%, 0)
+		z-index: 2
 
-		img
-			animation: hover-back .6s linear 1 forwards
+	// &__icon
+	// 	width: 70px
+	// 	height: 70px
+	// 	display: flex
+	// 	justify-content: space-between
+	// 	flex-wrap: wrap
+	// 	margin-bottom: 290px
 
-		a
-			&:hover,
-			&:focus
-				img
-					animation: hover .6s linear 1 forwards
+	// 	img
+	// 		animation: hover-back .6s linear 1 forwards
+
+	// 	a
+	// 		&:hover,
+	// 		&:focus
+	// 			img
+	// 				animation: hover .6s linear 1 forwards
 
 	&__text
 		position: relative
@@ -129,6 +136,7 @@
 		text-align: right
 		margin-right: 70px
 		margin-bottom: 210px
+		margin-top: 290px
 
 		span
 			position: absolute
@@ -138,12 +146,6 @@
 			height: 1px
 			background: #262a35
 
-	&__logo
-		position: absolute
-		left: 100%
-		top: 140px
-		transform: translate(-50%, 0)
-		z-index: 2
 	
 	.col-lg-6--end
 		display: flex
@@ -371,18 +373,17 @@
 
 		&::before,
 		&::after
+			content: ''
 			position: absolute
 			height: 292px
 			width: 150%
 			background: #252525
 
 		&::before
-			content: url(../img/work7.jpg)
 			left: 98.5%
 			top: 95px
 
 		&::after
-			content: url(../img/work8.jpg)
 			text-align: right
 			right: 98.5%
 			bottom: 292px
@@ -616,13 +617,17 @@
 		z-index: -1
 
 
-#map
+.map
 	height: 650px
 	position: absolute
 	left: 0
 	top: 0
 	right: 0
 	bottom: 0
+
+	iframe
+		width: 100%
+		height: 100%
 
 
 .footer
